@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Digital agreements</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+   
+  </head>
+  <body>
+    <!--Nav Bar-->
+    <nav class='navbar navbar-inverse'>
+      <div class="container">
+        <div class="navbar-header">
+            <button type="button" 
+                    class="navbar-toggle collapsed" 
+                    data-toggle="collapse" 
+                    data-target="#navbar"
+                    aria-expanded="false"
+                    aria-controls="navbar" >
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand">Digital Agreements</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="ra.html" target="_blank">Reservation Agreement</a>                     
+            </li>
+            <li><a href="spa.html" target="_blank">Sale and Purchase Agreement </a>                     
+            </li>                 
+            
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+    <!--Jumbotron-->
+    <div class="jumbotron text-center">
+      <div class="container">
+        <h1>Welcome to digital age</h1>
+        <p>This online service gives customers templates of agreements which speed up process and eliminate lawyer's costs</p>
+        <img src="img/firstPicture.png" alt="oldFashion" height="250" width="450"> 
+       
+        <img src="img/secondPicture.png" alt="digitalAge" height="250" width="450"> 
+        <hr>
+      
+
+      </div>
+     
+
+    </div>
+    <hr>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-6">
+          <h4>Reservation agreement</h4>
+        <p>Reservation agreement means an agreement relating to the future sale of a real estate (apartment and parking space) which is binding for the seller and grants purchaser the right to conclude sale and purchase agreement within the agreed time period once he paid the deposit.</p>
+        <p>The Parties may agree otherwise, where canceling the agreement trigers penalties for both parties.</p>
+        <p>Start new <a href="ra.html" target="_blank">Reservation agreement</a></p>
+        <p>After you submit all data and finish your Reservation agreeement, see all <a href="raStorage.html" target="_blank">Reservation agreement data </a>saved in local storage and use them to prepare sale and purchase agreement</p>
+        <p></p>
+      </div>
+        <aside class="col-md-6 col-sm-6 col-xs-6">
+          <h4>Sale and purchase agreement</h4>
+          <p></p>
+          <p></p>
+          <p></p>
+          <p></p>
+          <p>Start new <a href="spa.html" target="_blank">Sale and purchase agreement</a></p>
+          <p></p>
+
+        </aside>
+      </div>
+          
+    </div>
+    <hr>
+
+    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js">
+    </script>
+  </head>
+  
+  <body>
+    <h3 style="text-align: center">Calculate tax obligations</h3>
+    <h4 style="text-align: center">VAT on purchase price</h4>
+  
+    
+    <div style="text-align: center" ng-app = "mainApp" ng-controller = "priceController">
+       Purchase price without VAT: <input type = "number" ng-model = "price.basicPrice"> EUR<br>
+       <br>
+       VAT procent (decimal): <input type = "number" ng-model = "price.procent"><br>
+       <br>
+       VAT: {{price.vat()}} EUR
+    </div>
+    
+    <script>
+       var mainApp = angular.module("mainApp", []);
+       
+       mainApp.controller('priceController', function($scope) {
+          $scope.price = {
+             basicPrice: "",
+             procent: "",
+             
+             vat: function() {
+                var priceObject;
+                priceObject = $scope.price;            
+               
+                return priceObject.basicPrice*priceObject.procent; 
+            
+             }
+          };
+       });
+    </script>
+   
+      <hr>
+
+
+
+<footer class="page-footer font-small special-color-dark pt-4">
+ 
+  <div class="footer-copyright text-center py-3">© 2019 Copyright:
+    <a href="https://badvisory.net"> badvisory.net</a>
+  </div>
+  
+</footer>
+
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+  </body>
+ 
+</html>

@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        
+        <!-- https://getbootstrap.com/docs/4.3/getting-started/introduction/ -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+                integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
+        <!-- CUSTOM CSS -->
+        <link rel="stylesheet" href="css/style.css">
+
+        <title>Sale and purchase agreement</title>
+</head>
+
+<body>
+        <div class="container">
+                <div id="generalInfo" class="section">
+                        <h2>SALE AND PURCHASE AGREEMENT</h2>
+                        <div id="infoOnDate">
+                                This Sale and purchase agreement (hereinafter: the "Agreement") is entered into on
+                                <input type="text" required name="date" id="date" value="" />
+                                in Belgrade, bу and between:
+                                <input type="button" value="Submit data" onclick="renderInfoOnDate();" />
+                        </div>
+                        <div id="parties" class="row article">
+                                <div class="col-1">
+                                        1.
+                                </div>
+                                <div class="col-11 article-content">
+                                        <div id="buyer">
+                                                <p id="infoOnSeller"><input type="text" required name="sellerName"
+                                                                id="sellerName" value="" />, with registered seat in
+                                                        <input type="text" required name="sellerAddress"
+                                                                id="sellerAddress" value="" />, company
+                                                        registration no.: <input type="number" required
+                                                                name="sellerIdNo" id="sellerIdNo" value="" />, tax
+                                                        identification no.:
+                                                        <input type="number" required name="sellerTaxNo"
+                                                                id="sellerTaxNo" value="" />, represented by
+                                                        director <input type="text" required name="sellerDirector"
+                                                                id="sellerDirector" value="" />
+                                                        (hereinafter: „the Seller“)
+                                                        <input type="button" value="Submit data"
+                                                                onclick="renderInfoOnSeller();" />
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="row article">
+                                <div class="col-1">
+                                        2.
+                                </div>
+                                <div class="col-11 article-content">
+                                        <div id="buyer2">
+                                                <p id="infoOnBuyer"><input type="text" required name="buyerName"
+                                                                id="buyerName" value="" />, with address in <input
+                                                                type="text" required name="buyerAddress"
+                                                                id="buyerAddress" value="" />,
+                                                        personal ID
+                                                        no.: <input type="number" required name="buyerIdNo"
+                                                                id="buyerIdNo" value="" />
+                                                        (hereinafter: „the Buyer“)
+                                                        <input type="button" value="Submit data"
+                                                                onclick="renderInfoOnBuyer();" />
+                                                        <button onclick="addBuyer()">Add another buyer</button>
+                                                </p>
+                                        </div>
+                                        <p>(the Seller and the Buyer shall hereinafter jointly be referred to
+                                                as: „the Parties“ and either of them individually as: „а Party“)</p>
+                                </div>
+                                <div class="col-11 article-content">
+                                        <h3>WHEREAS</h3>
+                                        <p id="infoOnLot" class="">• The Seller is the investor of the business and
+                                                residential complex which is being constructed on the cadastral lot no.
+                                                <input type="text" required name="lotNo" id="lotNo" value="" />
+                                                Cadastral
+                                                Municipality <input type="text" required name="cadastreName"
+                                                        id="cadastreName" value="" />, which is owned by the Seller
+                                                (hereinafter: “the
+                                                Complex”);
+                                                <input type="button" value="Submit data" onclick="renderInfoOnLot();" />
+                                        </p>
+                                        <p class="">• The Buyer has intention to conclude with the Seller agreement on
+                                                sale and purchase of real property owned by the Seller in the facility
+                                                within the Complex
+                                                (hereinafter: “the Facility”) consisting of:</p>
+                                        <p id="infoOnApartment" class="">
+                                                i. apartment marked in the main design i.e. project design documentation
+                                                as apartment no.
+                                                <input type="number" required name="apartmentNo" id="apartmentNo"
+                                                        value="" />
+                                                with projected surface of <input type="number" required
+                                                        name="apartmentSurface" id="apartmentSurface" value="" /> m2 and
+                                                located on the <input type="text" required name="apartmentFloorNo"
+                                                        id="apartmentFloorNo" value="" /> floor of the Facility
+                                                (hereinafter: “the Apartment”),
+                                                <input type="button" value="Submit data"
+                                                        onclick="renderInfoOnApartment();" />
+                                        </p>
+                                        <p id="infoOnParking" class="">
+                                                ii. parking space marked in the main design i.e. project design
+                                                documentation as parking space no.
+                                                <input type="number" required name="parkingNo" id="parkingNo"
+                                                        value="" />
+                                                with projected surface of <input type="number" required
+                                                        name="parkingSurface" id="parkingSurface" value="" />
+                                                m2, located on the <input type="text" required name="parkingLevelNo"
+                                                        id="parkingLevelNo" value="" /> level of the underground garage
+                                                within the Facility
+                                                (hereinafter: “the Parking space”).
+                                                <input type="button" value="Submit data"
+                                                        onclick="renderInfoOnParking();" />
+                                        </p>
+                                        <p class="">(hereinafter: „the Real Property“).</p>
+                                </div>
+                        </div>
+                        <h3 class="">NOW, THEREFORE the Parties agree as follows:</h3>
+                </div>
+                <div class="section">
+                        <div class="row article">
+                                <div class="col-1 time">
+                                        <h3 class="">I</h3>
+                                        <p class="">1.1.</p>
+                                </div>
+                                <div class="col-11 article-content">
+                                        <h3>SUBJECT MATTER OF THE AGREEMENT</h3>
+                                        <p>
+                                                The Parties agree that the Seller is seling and the Buyer is buying the
+                                                Real Property under the terms and conditions set out in this Agreement
+                                                (hereiпafter
+                                                the: „Purchase price“).
+                                        </p>
+                                </div>
+                        </div>
+                        <div class="row article">
+                                <div class="col-1 time">
+                                        <p class="">1.2.</p>
+                                </div>
+                                <div class="col-11 article-content">
+                                        <p id="infoOnPrice" class="">The purchase price for the Real Property is <input
+                                                        type="number" required name="price" id="price" value="" /> EUR
+                                                without VAT, where the total is <input type="number" required
+                                                        name="totalPrice" id="totalPrice" value="" /> EUR increased for
+                                                applicable VAT rate.
+                                                <input type="button" value="Submit data"
+                                                        onclick="renderInfoOnPrice();" />
+                                        </p>
+                                </div>
+                        </div>
+                        <div class="row article">
+                                <div class="col-1 time">
+                                        <h3 class="">II</h3>
+                                </div>
+                                <div class="col-11 article-content">
+                                        <h3>PAYMENT OF PURCHASE PRICE</h3>
+                                </div>
+                        </div>
+                        <div class="row article">
+                                <div class="col-1 time">
+                                        <p class="">2.1.</p>
+                                </div>
+                                <div class="col-11 article-content">
+                                        <p id="infoOnPayment" class="">
+                                                The Buyer undertakes to pay within <input type="number" required
+                                                        name="deadline" id="deadline" value="" /> calendar days
+                                                from the date of the conclusion of this Agreement amount of
+                                                Purchase price in RSD countervalue at middle exchange rate of NBS оn
+                                                the day of payment to the followiпg Seller’s account no. <input
+                                                        type="number" required name="accountNo" id="accountNo"
+                                                        value="" /> at the
+                                                business bank <input type="text" required name="bankName" id="bankName"
+                                                        value="" />.
+                                                <input type="button" value="Submit data"
+                                                        onclick="renderInfoOnPayment();" />
+                                        </p>
+                                </div>
+                        </div>
+                </div>
+                <div class="section">
+                        <div class="row article">
+                                <div class="col-1 time">
+                                        <h3 class="">III</h3>
+                                </div>
+                                <div class="col-11 article-content">
+                                        <h3>RIGHTS AND OBLIGATIONS OF ТНЕ SELLER AND ТНЕ BUYER</h3>
+                                </div>
+                        </div>
+                        <div class="row article">
+                                <div class="col-1 time">
+                                        <p class="">3.1.</p>
+                                </div>
+                                <div class="col-11 article-content">
+                                        <p class="">After the payment of the Purchase price, the Seller shall issue to
+                                                the Buyer the Certificate on paid Purchase price.</p>
+                                </div>
+                        </div>
+                        <div class="row article">
+                                <div class="col-1 time">
+                                        <p class="">3.2.</p>
+                                </div>
+                                <div class="col-11 article-content">
+                                        <p>The Parties agree and acknowledge that the Purchase price is determined by m2
+                                                for the Real Property in its entirety taking into account all of its
+                                                characteristics, as well as that the Purchase price is fixed and
+                                                unchangeable, and that is it not subject to any subsequent changes in
+                                                cases that deviation in total surface of each Real Property from this
+                                                Agreement is less than 3%, and if the deviation in total surface of each
+                                                Real Property is more than 3%, the Purchase Price shall be changed
+                                                accordingly.
+                                        </p>
+                                </div>
+                        </div>
+                        <div class="row article">
+                                <div class="col-1 time">
+                                        <p class="">3.3.</p>
+                                </div>
+                                <div class="col-11 article-content">
+                                        <p class="">The Seller is obliged to hand over the Real Property into the
+                                                possession of the Buyer immediately after the receipt of the Purchase
+                                                price.</p>
+                                </div>
+                        </div>
+                        <div class="row article">
+                                <div class="col-1 time">
+                                        <p class="">3.4.</p>
+                                </div>
+                                <div class="col-11 article-content">
+                                        <p class="">The Buyer and the Seller shall sign the minutes on the hand over of
+                                                the Real Property and the Seller will deliver to the Buyer the keys of
+                                                entrance door to the Real Property and issue fiscal invoice for the
+                                                amount of the Purchase Price (if there is a legal obligation to provide
+                                                the fiscal receipt). </p>
+                                </div>
+                        </div>
+                        <div class="row article">
+                                <div class="col-1 time">
+                                        <p class="">3.5.</p>
+                                </div>
+                                <div class="col-11 article-content">
+                                        <p class="">The Buyer is obliged to note in the Minutes of Handover any
+                                                objections and identified defects and the Seller is obliged to remedy
+                                                the defects which are mutually agreed upon within the deadline
+                                                appropriate for such kind of works.</p>
+                                </div>
+                        </div>
+                        <div class="row article">
+                                <div class="col-1 time">
+                                        <p class="">3.6.</p>
+                                </div>
+                                <div class="col-11 article-content">
+                                        <p class="">If the Buyer who has fulfilled all of his obligations from this
+                                                Agreement is not present at the handover although he was duly invited,
+                                                or fails to sign the Minutes of Handover for any reason whatsoever, the
+                                                Seller may unilaterally sign the minutes, and it will be deemed that the
+                                                handover is completed, whereas the Buyer may collect the keys of
+                                                en-trance doors to the Real Property at the Seller’s registered office.
+                                        </p>
+                                </div>
+                        </div>
+                        <div class="row article">
+                                <div class="col-1 time">
+                                        <p class="">3.7.</p>
+                                </div>
+                                <div class="col-11 article-content">
+                                        <p class="">Until the handover of the Real Property to the Buyer, the risk of
+                                                accidental loss or damage will be borne by the Seller, and upon the
+                                                delivery to the Buyer, the risk shall be transferred to the Buyer. As of
+                                                the moment of the handover, the Buyer shall bear all public and utility
+                                                charges related to the use of the subject matter Real Property. The
+                                                Seller hereby gives his consent that the Buyer may register with all
+                                                public and utility companies with relation to public and utility
+                                                charges, and the Buyer obliges to register within 30 days from the day
+                                                of conclusion of the Minutes of Handover.
+                                        </p>
+                                </div>
+                        </div>
+                        <div class="row article">
+                                <div class="col-1 time">
+                                        <p class="">3.8.</p>
+                                </div>
+                                <div class="col-11 article-content">
+                                        <p class="">The Seller guarantees to the Buyer for the performed installations,
+                                                civil and craft works in the Apartment, in the period provided for by
+                                                the positive law of the Republic of Serbia. The manufacturer of the
+                                                equipment is liable for the equipment installed and mounted in the
+                                                Apartment, in line with the guarantees of the manufacturer of the
+                                                equipment, and at the handover the Seller shall hand to the Buyer all
+                                                the documentation related to the liability of the manufacturer of the
+                                                equipment.</p>
+                                </div>
+                        </div>
+                        <div class="row article">
+                                <div class="col-1 time">
+                                        <p class="">3.9.</p>
+                                </div>
+                                <div class="col-11 article-content">
+                                        <p class="">Within the warranty period, the Seller undertakes to, at its own
+                                                cost and upon the Buy-er’s written request approach remedying of the
+                                                defects resulting from low quality works or low quality of installed
+                                                materials and to remedy the same within the time pe-riod reasonably
+                                                necessary for that type of works. The Seller is not obliged to remedy
+                                                the defects resulting from negligence and improper handling and use as
+                                                well as the defects resulting from the use of the Real Property oth-er
+                                                than for its purpose.</p>
+                                </div>
+                        </div>
+                </div>
+                <div class="section">
+                        <div class="row article">
+                                <div class="col-1 time">
+                                        <h3 class="">IV</h3>
+                                </div>
+                                <div class="col-11 article-content">
+                                        <h3>TERMINATION</h3>
+                                </div>
+                        </div>
+                        <div class="row article">
+                                <div class="col-1 time">
+                                        <p class="">4.1.</p>
+                                </div>
+                                <div class="col-11 article-content">
+                                        <p>In the event the Buyer is late or does not pay to the Seller the total amount
+                                                or any amount of the Purchase price in accordance with the Clause 2 of
+                                                this Agreement, not even in the additional period of 30 (thirty) days
+                                                from the date that the amount became due for payment (“Reasonable
+                                                additional period for performance”), and if the Seller did not extend
+                                                this Reasonable additional period for performance in especially
+                                                justified cases, the Seller has the right to unilaterally terminate this
+                                                Agreement.</p>
+                                </div>
+                        </div>
+                        <div class="row article">
+                                <div class="col-1 time">
+                                        <p class="">4.2.</p>
+                                </div>
+                                <div class="col-11 article-content">
+                                        <p>The Buyer has the right to unilaterally terminate this Agreement within the
+                                                limited pre-scribed by the applicable law by sending a written
+                                                termination notice to the Seller, if any of the representations and
+                                                warranties are not true, and provided that the Seller fails to remedy
+                                                the defect within one month from the notification and the letter of the
+                                                Buyer to remedy such defects.</p>
+                                </div>
+                        </div>
+                </div>
+                <div class="section">
+                        <div class="row article">
+                                <div class="col-1 time">
+                                        <h3 class="">V</h3>
+                                </div>
+                                <div class="col-11 article-content">
+                                        <h3>SELLER’S WARRANTIES</h3>
+                                </div>
+                        </div>
+                        <div class="row article">
+                                <div class="col-1 time">
+                                        <p class="">5.1.</p>
+                                </div>
+                                <div class="col-11 article-content">
+                                        <p class="">The Seller represents and warrants to the Buyer that the Real
+                                                Property is owned solely by the Seller, that it is not subject to any
+                                                prohibition of disposal, that it is not subject of any dispute, that the
+                                                Seller has not received any down payment from a third party and that it
+                                                has not concluded with a third party any preliminary agreement and/or
+                                                agree-ment for purchase price and sale of real property, as well as that
+                                                the subject Real Prop-erty is not burdened by any other encumbrance on
+                                                the Facility and/ or the land in favor of the Project Financing Bank.
+                                        </p>
+                                </div>
+                        </div>
+                        <div class="row article">
+                                <div class="col-1 time">
+                                        <p class="">5.2.</p>
+                                </div>
+                                <div class="col-11 article-content">
+                                        <p class="">The Seller is liable for any legal deficiencies, and obliged to
+                                                protect the Buyer against eviction. </p>
+                                </div>
+                        </div>
+                </div>
+                <div class="section">
+                        <div class="row article">
+                                <div class="col-1 time">
+                                        <h3 class="">VI</h3>
+                                </div>
+                                <div class="col-11 article-content">
+                                        <h3>REGISTRATION OF THE BUYER</h3>
+                                </div>
+                        </div>
+                        <div class="row article">
+                                <div class="col-1 time">
+                                        <p class="">6.1.</p>
+                                </div>
+                                <div class="col-11 article-content">
+                                        <p class="">The Seller agrees that the Buyer may be registered as the owner of
+                                                the Real Property, without any additional consent or presence of the
+                                                Seller, on the basis of this Agreement (clausula intabulandi).</p>
+                                </div>
+                        </div>
+                        <div class="row article">
+                                <div class="col-1 time">
+                                        <p class="">6.2.</p>
+                                </div>
+                                <div class="col-11 article-content">
+                                        <p class="">The Buyer bears the costs of registration of his title on the Real
+                                                Property with the competent Cadaster of Real Property.</p>
+                                </div>
+                        </div>
+                </div>
+                <div class="section">
+                        <div class="row article">
+                                <div class="col-1 time">
+                                        <h3 class="">VII</h3>
+                                </div>
+                                <div class="col-11 article-content">
+                                        <h3>MISCELLANEOUS</h3>
+                                </div>
+                        </div>
+                        <div class="row article">
+                                <div class="col-1 time">
+                                        <p class="">7.1.</p>
+                                </div>
+                                <div class="col-11 article-content">
+                                        <p class="">All written correspondace between the Parties shall be done at the
+                                                address of the registered seat of the Seller, i.e. at the address of the
+                                                Buyer stated in this Agreement.</p>
+                                </div>
+                        </div>
+                        <div class="row article">
+                                <div class="col-1 time">
+                                        <p class="">7.2.</p>
+                                </div>
+                                <div class="col-11 article-content">
+                                        <p class="">In the event of change of the address the Parties are obliged to
+                                                notify the other Party thereof in period that shall be no longer than 7
+                                                (seven) days. Otherwise it shall be deemed that notification has been
+                                                properly done by sending the written to the address stated in this
+                                                Agreement.</p>
+                                </div>
+                        </div>
+                        <div class="row article">
+                                <div class="col-1 time">
+                                        <p class="">7.3.</p>
+                                </div>
+                                <div class="col-11 article-content">
+                                        <p class="">If any provision of this Agreement becomes invalid or unenforceable,
+                                                all of the remaining provisions of this Agreement shall remain in full
+                                                force and effect and shall be binding upon the Parties hereto, to the
+                                                extent possible by law.</p>
+                                </div>
+                        </div>
+                        <div class="row article">
+                                <div class="col-1 time">
+                                        <p class="">7.4.</p>
+                                </div>
+                                <div class="col-11 article-content">
+                                        <p class="">Any amendments and/or annexes to this Agreement including mutual
+                                                termination of this Agreement shall be valid only if executed in written
+                                                form of annex, i.e. written form of mutual termination agreement.</p>
+                                </div>
+                        </div>
+                        <div class="row article">
+                                <div class="col-1 time">
+                                        <p class="">7.5.</p>
+                                </div>
+                                <div class="col-11 article-content">
+                                        <p class="">Upon conclusion of the Sale and Purchase Agreement for the Real
+                                                Property this Agreement shall cease to exist and provisions of the Sale
+                                                and Purchase Agreement for the Real Property shall override all
+                                                provisions of this Agreement including its Appendices.</p>
+                                </div>
+                        </div>
+                        <div class="row article">
+                                <div class="col-1 time">
+                                        <p class="">7.6.</p>
+                                </div>
+                                <div class="col-11 article-content">
+                                        <p class="">Applicable law for this Agreement shall be law of the Republic of
+                                                Serbia.</p>
+                                </div>
+                        </div>
+                        <div class="row article">
+                                <div class="col-1 time">
+                                        <p class="">7.7.</p>
+                                </div>
+                                <div class="col-11 article-content">
+                                        <p class="">All eventual disputes arising out of or in connection with the
+                                                conclusion and performance of this Agreement the Parties shall try to
+                                                resolve in an amicable manner. If the dispute cannot be settled
+                                                amicably, the dispute shall be finally settled by the competent court in
+                                                Belgrade.</p>
+                                </div>
+                        </div>
+                        <div class="row article">
+                                <div class="col-1 time">
+                                        <p class="">7.8.</p>
+                                </div>
+                                <div class="col-11 article-content">
+                                        <p class="">In case of discrepancy betwen text of the Agreement in Serbian and
+                                                text of the Agreement in English, the version of the Agreement in
+                                                Serbian shall prevail.</p>
+                                </div>
+                        </div>
+                        <div class="row article">
+                                <div class="col-1 time">
+                                        <p class="">7.9.</p>
+                                </div>
+                                <div class="col-11 article-content">
+                                        <p class="">This Agreement is made in 5 (five) identical counterparts, 1 (one)
+                                                for the civil law notary, 2 (two)
+                                                for the Seller and 2 (two) for the Buyer.</p>
+                                </div>
+                        </div>
+                </div>
+                <div class="sectionFooter">
+                        <h5><b>FOR AND ON BEHALF OF THE SELLER</b></h5>
+                        <div id="sellerSignature">
+                                <p></p>
+                                <p></p>
+                                <p>__________________________</p>
+                        </div>
+                        <h5><b>FOR AND ON BEHALF OF THE BUYER</b></h5>
+                        <div id="buyerSignature">
+                                <p></p>
+                                <p></p>
+                                <p>__________________________</p>
+                        </div>
+                </div>
+        </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+                crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                crossorigin="anonymous"></script>
+        <script type="text/javascript" src="js/spa.js"></script>
+</body>
+
+</html>
